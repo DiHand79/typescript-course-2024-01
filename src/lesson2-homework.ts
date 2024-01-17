@@ -106,7 +106,7 @@ excercise6();
 function excercise7() {
   // TODO: add type annotations
   type TListNumbers = number[];
-  type TMapSumFn = (arr: TListNumbers, fn: Function) => number[];
+  type TMapSumFn = (arr: TListNumbers, fn: (num: number) => number) => number[];
 
   const map: TMapSumFn = (arr, fn) => {
     // TODO: add logic here
@@ -351,21 +351,21 @@ export function distance2(p1: TPoint2D, p2: TPoint2D): number {
 // Additional tasks - optional
 // TODO: create a function which takes any string and returns the string reversed
 function excerciseA(input: string): string {
-  let reversed: string = input.split('').reverse().join('');
+  const reversed: string = input.split('').reverse().join('');
   return reversed;
 }
 console.log('test reversed "StringTest": ', excerciseA('StringTest'));
 
 // TODO: create a function which takes an array of numbers and returns the sum of all numbers
 function excerciseB(input: number[]): number {
-  let summ: number = input.reduce((sum, curr) => sum + curr, 0);
+  const summ: number = input.reduce((sum, curr) => sum + curr, 0);
   return summ;
 }
 console.log('test summ [1,2,3,4,5,6,7]: ', excerciseB([1, 2, 3, 4, 5, 6, 7]));
 
 // TODO: create a function which takes an array of numbers and returns the average of all numbers
 function excerciseC(input: number[]): number {
-  let average: number =
+  const average: number =
     input.reduce((sum, curr) => sum + curr, 0) / input.length;
   return average;
 }
